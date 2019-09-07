@@ -9,12 +9,12 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
   
-  app.get("/make", function(req, res) {
-    res.sendFile(path.join(__dirname, "make.html"));
+  app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
   });
   
-  app.get("/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+  app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
   });
 
   var reserv = [
@@ -34,7 +34,7 @@ app.get("/", function(req, res) {
     
   ];
 
-  app.post("/api/view", function(req, res) {
+  app.post("/api/tables", function(req, res) {
     var newReserv = req.body;
     newReserv.routeName = newReserv.name.replace(/\s+/g, "").toLowerCase();
     console.log(newReserv);
